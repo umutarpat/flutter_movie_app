@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_movie_app/global/utils/const_decoration.dart';
 import 'package:flutter_movie_app/global/utils/const_design.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -34,5 +35,11 @@ ThemeData lightTheme(BuildContext context) {
             height: 1.1,
           ),
         ),
+    inputDecorationTheme: InputDecorationTheme(
+      enabledBorder: inputDecorationEnabledBorder(),
+      focusedBorder: inputDecorationFocusedBorder(),
+      disabledBorder: inputDecorationDisabledBorder(),
+      border: inputDecorationBorder(),
+    ),
   );
 }

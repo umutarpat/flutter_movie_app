@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_movie_app/global/common/image_box.dart';
 import 'package:flutter_movie_app/global/models/movie_model/movie_model.dart';
 import 'package:get/get.dart';
 
@@ -16,9 +17,8 @@ class MoviesSearchViewMoviesGridCard extends StatelessWidget {
         children: [
           Stack(
             children: [
-              Image.network(
-                "https://image.tmdb.org/t/p/original${movie.posterPath}",
-                fit: BoxFit.cover,
+              ImageBox(
+                path: movie.posterPath,
               ),
               Positioned(
                 bottom: 0,
@@ -34,7 +34,7 @@ class MoviesSearchViewMoviesGridCard extends StatelessWidget {
           ),
           Spacer(),
           Text(
-            movie.originalTitle ?? '',
+            movie.title ?? '',
             style: Theme.of(context).textTheme.subtitle2,
           )
         ],
