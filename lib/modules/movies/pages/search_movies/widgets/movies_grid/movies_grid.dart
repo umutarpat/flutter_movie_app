@@ -9,7 +9,11 @@ class MoviesSearchViewMoviesGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-        crossAxisCount: 2,
+        crossAxisCount: 3,
+        crossAxisSpacing: 8,
+        mainAxisSpacing: 10,
+        physics: ScrollPhysics(),
+        childAspectRatio: .5,
         shrinkWrap: true,
         children: _controller.searchMoviesData.value.results != null
             ? _controller.searchMoviesData.value.results!
