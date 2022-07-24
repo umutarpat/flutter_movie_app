@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ImageBox extends StatelessWidget {
+class GlobalImageBox extends StatelessWidget {
   String path;
-  ImageBox({required this.path});
+  GlobalImageBox({required this.path});
 
   @override
   Widget build(BuildContext context) {
