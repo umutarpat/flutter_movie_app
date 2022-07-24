@@ -20,8 +20,13 @@ class MoviesSearchViewMoviesGridCard extends StatelessWidget {
           children: [
             Stack(
               children: [
-                GlobalImageBox(
-                  path: movie.posterPath,
+                Container(
+                  width: 150,
+                  height: 150,
+                  child: GlobalImageBox(
+                    path: movie.posterPath,
+                    fit: BoxFit.fill,
+                  ),
                 ),
                 Positioned(
                   bottom: 0,
@@ -35,10 +40,13 @@ class MoviesSearchViewMoviesGridCard extends StatelessWidget {
                 )
               ],
             ),
-            Spacer(),
+            SizedBox(
+              height: context.height * 0.05,
+            ),
             Text(
               movie.title ?? '',
               style: Theme.of(context).textTheme.subtitle2,
+              textAlign: TextAlign.center,
             )
           ],
         ),
