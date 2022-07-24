@@ -17,6 +17,7 @@ class MoviesSearchViewController extends GetxController implements IFuture {
   @override
   void onInit() {
     super.onInit();
+    updateMainFuture();
   }
 
   @override
@@ -35,6 +36,8 @@ class MoviesSearchViewController extends GetxController implements IFuture {
   }
 
   getSearchedMovie() {
-    searchMoviesFuture.value = searchMovieService();
+    searchMoviesFuture.value = searchMovieService(
+      query: formkey.value.currentState?.fields['searchfield']?.value ?? 'a',
+    );
   }
 }
