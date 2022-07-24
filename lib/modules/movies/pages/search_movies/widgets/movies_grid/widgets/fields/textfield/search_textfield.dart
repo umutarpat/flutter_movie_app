@@ -17,8 +17,13 @@ class MoviesSearchViewMoviesGridSearchTextfield extends StatelessWidget {
       name: "searchfield",
       onChanged: (value) {
         if (_controller.formkey.value.currentState!.validate()) {
-          EasyDebounce.debounce('search', Duration(seconds: 1),
-              () => {_controller.updateMainFuture()});
+          EasyDebounce.debounce(
+              'search',
+              Duration(seconds: 1),
+              () => {
+                    // refreshes pagingController and that makes service get new query
+                    _controller.pagingController.refresh()
+                  });
         }
       },
       validator:

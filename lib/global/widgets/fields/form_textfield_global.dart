@@ -8,7 +8,7 @@ class GlobalFormTextField extends StatelessWidget {
   String? name;
   double? width;
   double height;
-  String initialValue;
+  String? initialValue;
   bool enableInteractiveSelection;
   InputDecoration decoration;
   void Function(String?)? onChanged;
@@ -31,7 +31,7 @@ class GlobalFormTextField extends StatelessWidget {
     this.width,
     this.height = 50,
     this.textAlign = TextAlign.start,
-    this.initialValue = "",
+    this.initialValue,
     this.enableInteractiveSelection = true,
     this.validator,
     this.onChanged,

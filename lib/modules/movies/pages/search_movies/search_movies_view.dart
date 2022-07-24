@@ -12,37 +12,12 @@ class MoviesSearchView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: globalAppBar(context, title: "Movies"),
-        body: SingleChildScrollView(
-            child: GetBuilder<MoviesSearchViewController>(
-                id: 'main',
-                builder: (controller) {
-                  return FormBuilder(
-                      key: controller.formkey.value,
-                      child: Column(
-                        children: [
-                          FutureBuilder(
-                              future: controller.mainFuture.value,
-                              builder: (context, snapshot) {
-                                switch (snapshot.connectionState) {
-                                  case ConnectionState.active:
-                                  case ConnectionState.waiting:
-                                    return Center(
-                                        child: CircularProgressIndicator());
-                                  case ConnectionState.done:
-                                    if (snapshot.hasError) {
-                                      return Container();
-                                    }
-                                    controller.assignFutures(
-                                        (snapshot.data! as List));
-
-                                    return MoviesSearchViewMoviesGrid();
-                                  default:
-                                    return Center(
-                                        child: CircularProgressIndicator());
-                                }
-                              })
-                        ],
-                      ));
-                })));
+        body: GetBuilder<MoviesSearchViewController>(
+            id: 'main',
+            builder: (controller) {
+              return FormBuilder(
+                  key: controller.formkey.value,
+                  child: MoviesSearchViewMoviesGrid());
+            }));
   }
 }

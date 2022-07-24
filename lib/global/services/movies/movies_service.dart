@@ -4,7 +4,7 @@ import 'package:flutter_movie_app/global/models/response_data/search_movie_respo
 import 'package:flutter_movie_app/global/utils/logger.dart';
 
 Future<SearchMovieResponseData> searchMovieService(
-    {required String query, String page = '1'}) async {
+    {required String query, int page = 1}) async {
   try {
     var response = await getDio(dioOptions)
         .get("/search/movie", queryParameters: {'query': query, 'page': page});
