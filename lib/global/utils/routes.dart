@@ -1,5 +1,5 @@
 import 'package:flutter_movie_app/modules/movies/pages/movie_detail/movie_detail_view.dart';
-import 'package:flutter_movie_app/modules/movies/pages/search_movies/search_movies.dart';
+import 'package:flutter_movie_app/modules/movies/pages/search_movies/search_movies_view.dart';
 import 'package:get/get.dart';
 
 List<GetPage<dynamic>> routes = [
