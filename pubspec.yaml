@@ -37,6 +37,7 @@ dependencies:
   dio: ^4.0.6
   json_annotation:
   flutter_form_builder: ^7.4.0
+  google_fonts: ^3.0.1
 
 dev_dependencies:
   flutter_test:

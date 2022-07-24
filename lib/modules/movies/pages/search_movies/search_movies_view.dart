@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_movie_app/modules/movies/pages/search_movies/controllers/search_movies_controller.dart';
+import 'package:flutter_movie_app/modules/movies/pages/search_movies/widgets/movies_grid/movies_grid.dart';
 import 'package:get/get.dart';
 
 class MoviesSearchView extends StatelessWidget {
@@ -32,7 +33,8 @@ class MoviesSearchView extends StatelessWidget {
                                     }
                                     controller.assignFutures(
                                         (snapshot.data! as List));
-                                    return Container();
+
+                                    return MoviesSearchViewMoviesGrid();
                                   default:
                                     return SizedBox(
                                         height: 600,
