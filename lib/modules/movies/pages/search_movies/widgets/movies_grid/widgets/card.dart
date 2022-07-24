@@ -9,35 +9,39 @@ class MoviesSearchViewMoviesGridCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Stack(
-            children: [
-              GlobalImageBox(
-                path: movie.posterPath,
-              ),
-              Positioned(
-                bottom: 0,
-                left: 0,
-                child: Card(
-                    child: Container(
-                  width: 25,
-                  height: 25,
-                  child: Center(child: Text(movie.voteAverage.toString())),
-                )),
-              )
-            ],
-          ),
-          Spacer(),
-          Text(
-            movie.title ?? '',
-            style: Theme.of(context).textTheme.subtitle2,
-          )
-        ],
+    return GestureDetector(
+      onTap: () => Get.toNamed("/movie_detail",
+          arguments: movie, parameters: {'id': movie.id.toString()}),
+      child: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Stack(
+              children: [
+                GlobalImageBox(
+                  path: movie.posterPath,
+                ),
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  child: Card(
+                      child: Container(
+                    width: 25,
+                    height: 25,
+                    child: Center(child: Text(movie.voteAverage.toString())),
+                  )),
+                )
+              ],
+            ),
+            Spacer(),
+            Text(
+              movie.title ?? '',
+              style: Theme.of(context).textTheme.subtitle2,
+            )
+          ],
+        ),
       ),
     );
   }
