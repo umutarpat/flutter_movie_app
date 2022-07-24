@@ -43,10 +43,16 @@ class MoviesSearchViewMoviesGridCard extends StatelessWidget {
             SizedBox(
               height: context.height * 0.05,
             ),
-            Text(
-              movie.title ?? '',
-              style: Theme.of(context).textTheme.subtitle2,
-              textAlign: TextAlign.center,
+            Flexible(
+              child: Text(
+                movie.title ?? '',
+                overflow: TextOverflow.clip,
+                style: Theme.of(context)
+                    .textTheme
+                    .subtitle2!
+                    .copyWith(fontSize: 15),
+                textAlign: TextAlign.center,
+              ),
             )
           ],
         ),
