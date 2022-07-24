@@ -1,16 +1,15 @@
 # flutter_movie_app
 
-A new Flutter project.
+## Third-party packages used.
 
-## Getting Started
+Form_builder: It is an essantial package for sending form data into api.
 
-This project is a starting point for a Flutter application.
+Dio: Best in town for data fetching. Interceptors,auto data parsing and custom options makes data fetching easier.
 
-A few resources to get you started if this is your first Flutter project:
+GetX: GetX is a state managment package but it is more than just a state management package. It has a lot of features. It is very user friendly.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+infinite_scroll_pagination: Very good package for infinite scroll. Makes things easier.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+easy_debounce: Good data bounce handling. With this I can hold data how long I want and then send it to api etc..
+
+json_annotation: Good for model generation.
