@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class GlobalImageBox extends StatelessWidget {
-  String path;
+  String? path;
   GlobalImageBox({required this.path});
 
   @override

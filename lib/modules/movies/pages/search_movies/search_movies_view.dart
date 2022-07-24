@@ -26,8 +26,7 @@ class MoviesSearchView extends StatelessWidget {
                                 switch (snapshot.connectionState) {
                                   case ConnectionState.active:
                                   case ConnectionState.waiting:
-                                    return SizedBox(
-                                        height: 600,
+                                    return Center(
                                         child: CircularProgressIndicator());
                                   case ConnectionState.done:
                                     if (snapshot.hasError) {
@@ -38,8 +37,7 @@ class MoviesSearchView extends StatelessWidget {
 
                                     return MoviesSearchViewMoviesGrid();
                                   default:
-                                    return SizedBox(
-                                        height: 600,
+                                    return Center(
                                         child: CircularProgressIndicator());
                                 }
                               })
